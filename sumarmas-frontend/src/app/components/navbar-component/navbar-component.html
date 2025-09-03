@@ -1,0 +1,42 @@
+<nav class="sticky top-0 z-50 bg-white shadow">
+    <div class="flex h-14 items-center justify-between px-4">
+        <!-- Brand -->
+        <a routerLink="/" routerLinkActive="text-[#00a63e]" [routerLinkActiveOptions]="{ exact: true }"
+            class="font-bold">
+            Sumar<span class="text-[#00a63e]">+</span>
+        </a>
+
+        <!-- Botón hamburguesa -->
+        <button class="lg:hidden" (click)="toggle()">☰</button>
+
+        <!-- Links desktop -->
+        <div class="hidden lg:flex gap-4">
+            <a class="btn btn-white" routerLink="/campaigns" routerLinkActive="btn-green">Campañas</a>
+
+            <a class="btn btn-white" routerLink="/organizations" routerLinkActive="btn-green">Organizaciones</a>
+            <!-- 
+            <a class="btn btn-white" routerLink="/401" routerLinkActive="btn-green" [routerLinkActiveOptions]="{ exact: true }">Donar</a> -->
+            <a class="btn" routerLink="/401" routerLinkActive #rla="routerLinkActive"
+                [routerLinkActiveOptions]="{ exact: true }" [ngClass]="rla.isActive ? 'btn-active-white' : 'btn-white'">
+                Donar
+            </a>
+
+
+            <a class="btn btn-green" routerLink="/auth/login" routerLinkActive="btn-outline">Ingresar</a>
+        </div>
+    </div>
+
+    <!-- Menú móvil -->
+    @if (open()) {
+    <div class="flex flex-col gap-2 p-4 lg:hidden">
+        <a class="btn btn-white" routerLink="/campaigns" routerLinkActive="btn-green" (click)="close()">Campañas</a>
+
+        <a class="btn btn-white" routerLink="/organizations" routerLinkActive="btn-green"
+            (click)="close()">Organizaciones</a>
+
+        <a class="btn btn-white" routerLink="/donate" routerLinkActive="btn-green" (click)="close()">Donar</a>
+
+        <a class="btn btn-white" routerLink="/auth/login" routerLinkActive="btn-green" (click)="close()">Ingresar</a>
+    </div>
+    }
+</nav>

@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+    --brand-1: #8EC5FC;
+    --brand-2: #E0C3FC;
+}
+
+@layer components {
+
+    //Estilos de boton
+
+    .loader {
+        @apply inline-block shrink-0 align-middle size-5 rounded-full border-2 border-white border-t-transparent animate-spin;
+    }
+
+    .btn {
+        @apply rounded-xl p-2 cursor-pointer flex disabled:opacity-50 disabled:cursor-not-allowed;
+
+        &.btn-green {
+            @apply bg-green-500 hover:bg-green-600 disabled:hover:bg-green-500;
+        }
+
+        &.btn-white {
+            @apply bg-white text-gray-800 hover:bg-gray-100 disabled:hover:bg-white;
+        }
+
+        &.btn-sm {
+            @apply px-3 py-1.5 text-sm;
+        }
+
+        &.btn-md {
+            @apply px-4 py-2 text-base;
+        }
+
+        &.btn-lg {
+            @apply px-6 py-3 text-lg;
+        }
+    }
+
+    .btn-active-white {
+        @apply text-green-500;
+    }
+
+    .btn-active-green {
+        @apply text-white;
+    }
+
+}
