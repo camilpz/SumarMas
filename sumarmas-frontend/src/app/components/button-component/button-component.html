@@ -1,11 +1,8 @@
-<!-- <button type="button" class="btn" [disabled]="buttonConfig.disabled"
-[ngClass]="[buttonConfig.loading ? 'animate-spin' : '']"
->{{buttonConfig.label}}</button> -->
-<button class="btn btn-green inline-flex items-center gap-2" [disabled]="disabled">
+<button class="btn inline-flex items-center gap-2" [ngClass]="style" [disabled]="disabled">
     @if (!loading) {
         {{ labelName || 'Enviar' }}
     } @else {
         <span class="loader mr-1"></span>
-        Cargando…
+        Cargando…|
     }
 </button>

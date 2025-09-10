@@ -11,13 +11,18 @@
 
         <!-- Links desktop -->
         <div class="hidden lg:flex gap-4">
-            <a class="btn btn-white" routerLink="/campaigns" routerLinkActive="btn-green">Campañas</a>
+            <a class="btn btn-nav" routerLink="/campaigns" routerLinkActive="btn-active-white"
+                [routerLinkActiveOptions]="{ exact: true }">
+                Campañas
+            </a>
 
-            <a class="btn btn-white" routerLink="/organizations" routerLinkActive="btn-green">Organizaciones</a>
-            <!-- 
-            <a class="btn btn-white" routerLink="/401" routerLinkActive="btn-green" [routerLinkActiveOptions]="{ exact: true }">Donar</a> -->
-            <a class="btn" routerLink="/401" routerLinkActive #rla="routerLinkActive"
-                [routerLinkActiveOptions]="{ exact: true }" [ngClass]="rla.isActive ? 'btn-active-white' : 'btn-white'">
+            <a class="btn btn-nav" routerLink="/404" routerLinkActive="btn-active-white"
+                [routerLinkActiveOptions]="{ exact: true }">
+                Organizaciones
+            </a>
+
+            <a class="btn btn-nav" routerLink="/401" routerLinkActive="btn-active-white"
+                [routerLinkActiveOptions]="{ exact: true }">
                 Donar
             </a>
 
@@ -29,14 +34,14 @@
     <!-- Menú móvil -->
     @if (open()) {
     <div class="flex flex-col gap-2 p-4 lg:hidden">
-        <a class="btn btn-white" routerLink="/campaigns" routerLinkActive="btn-green" (click)="close()">Campañas</a>
+        <a class="btn btn-nav" routerLink="/campaigns" routerLinkActive="btn-green" (click)="close()">Campañas</a>
 
-        <a class="btn btn-white" routerLink="/organizations" routerLinkActive="btn-green"
+        <a class="btn btn-nav" routerLink="/organizations" routerLinkActive="btn-green"
             (click)="close()">Organizaciones</a>
 
-        <a class="btn btn-white" routerLink="/donate" routerLinkActive="btn-green" (click)="close()">Donar</a>
+        <a class="btn btn-nav" routerLink="/donate" routerLinkActive="btn-green" (click)="close()">Donar</a>
 
-        <a class="btn btn-white" routerLink="/auth/login" routerLinkActive="btn-green" (click)="close()">Ingresar</a>
+        <a class="btn btn-nav" routerLink="/login" routerLinkActive="btn-green" (click)="close()">Ingresar</a>
     </div>
     }
 </nav>

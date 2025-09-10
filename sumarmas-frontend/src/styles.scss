@@ -7,22 +7,34 @@
 
 @layer components {
 
+    //Estilo login
+
+    .ctn-rounded {
+        @apply inline-flex flex-col items-center justify-center bg-white rounded-xl shadow-xl w-fit px-8 py-6;
+    }
+
     //Estilos de boton
 
     .loader {
         @apply inline-block shrink-0 align-middle size-5 rounded-full border-2 border-white border-t-transparent animate-spin;
     }
 
+    .btn-nav{
+            @apply rounded-xl p-2 cursor-pointer flex disabled:opacity-50 disabled:cursor-not-allowed gap-2 bg-white text-gray-800 hover:bg-gray-100 disabled:hover:bg-white
+        }
+
     .btn {
-        @apply rounded-xl p-2 cursor-pointer flex disabled:opacity-50 disabled:cursor-not-allowed;
+        @apply rounded-xl p-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed gap-2 text-center;
 
         &.btn-green {
-            @apply bg-green-500 hover:bg-green-600 disabled:hover:bg-green-500;
+            @apply bg-green-500 text-white hover:bg-green-600 disabled:hover:bg-green-500;
         }
 
         &.btn-white {
-            @apply bg-white text-gray-800 hover:bg-gray-100 disabled:hover:bg-white;
+            @apply bg-white text-green-500 hover:bg-gray-100 disabled:hover:bg-white;
         }
+
+        
 
         &.btn-sm {
             @apply px-3 py-1.5 text-sm;
